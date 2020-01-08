@@ -3,6 +3,7 @@ const path = require("path");
 const hbs = require('hbs')
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 3000 ; 
 const forecast = require("./utils/forecast.js")
 
 //Define paths for express config
@@ -60,6 +61,6 @@ app.get("/weather", (req, res) => {
 app.get("*", (req, res)=>{
     res.send("refrjneghthytjnh")
 })
-app.listen(3000, ()=>{
-    console.log("App is listening you on port 3000!");
+app.listen(port, ()=>{
+    console.log("App is listening you on port "+port+" !");
 })
